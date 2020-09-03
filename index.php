@@ -8,11 +8,11 @@
     <body>
         
         <div>
-            <?php include '/includes/navbar.php'?>
+            <?php include 'C:\xampp\htdocs\pp2\includes\navbar.php'?>
         </div>
 
         <div>
-            <?php include '/includes/footer.php'?>
+            <?php include 'C:\xampp\htdocs\pp2\includes\footer.php'?>
         </div>
     </body>
 </html>
