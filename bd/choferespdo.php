@@ -36,7 +36,7 @@ class choferPDO
             $c= new chofer($result->Cuil,$result->Nombre,$result->Apellido,$result->Telefono,$result->Vencimiento_Psicofisico,$result->Vencimiento_Cargas_Peligrosas,$result->Vencimiento_Art,$result->Vencimiento_Manip_Alimentos);
             $chofer[]=$c;
         }
-        return $chofer[];
+        return $chofer;
     }
 
 }

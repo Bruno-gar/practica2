@@ -1,7 +1,7 @@
 <?php 
     require_once 'C:\xampp\htdocs\pp2\bd\choferespdo.php';
     $pdo = new choferPDO();
-    $chofer = $pdo->getAll();
+    $c = $pdo->getAll();
 ?>
 <html>
     <head>
@@ -32,13 +32,13 @@
                 </thead>
                 <tbody>
                     <?php
-                        foreach($chofer as $chofer){
+                        foreach($c as $chofer){
                     ?>
                     <tr>
                         <td><?php echo $chofer->cuil;?></td>
-                        <td><?php echo $chofer->nobre; ?></td>
+                        <td><?php echo $chofer->nombre; ?></td>
                         <td><?php echo $chofer->apellido;?></td>
-                        <td><?php echo $chofer->fdsf;?></td>
+                        <td><?php echo $chofer->telefono;?></td>
                         <?php } ?>
                     </tr>
                 </tbody>
