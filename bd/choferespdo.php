@@ -2,7 +2,7 @@
 require_once 'choferes.php';
 class choferPDO
 {
-    private $pdo = [
+    private $configuracion = [
         'servidor' => 'localhost',
         'usuario' => 'root',
         'password' => '',
@@ -16,10 +16,10 @@ class choferPDO
         try{
             $this->pdo = new PDO(
                 "mysql:host={$this->configuracion['servidor']};
-                dbname={$this->configuracion['baseDatos']};charset=utf8",
-                $this->configuracion['ususario'],
-                $this->configuracion['password']
-            );
+                 dbname={$this->configuracion['baseDatos']};charset=utf8",
+                 $this->configuracion['usuario'],
+                 $this->configuracion['password']
+             );
         }
         catch(PDOexception $e){
             die("¡error!". $e-getmessage() . "<br>");
@@ -36,7 +36,7 @@ class choferPDO
             $c= new chofer($result->Cuil,$result->Nombre,$result->Apellido,$result->Telefono,$result->Vencimiento_Psicofisico,$result->Vencimiento_Cargas_Peligrosas,$result->Vencimiento_Art,$result->Vencimiento_Manip_Alimentos);
             $chofer[]=$c;
         }
-        return $chofer;
+        return $chofer[];
     }
 
 }

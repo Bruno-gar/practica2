@@ -7,7 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Choferes</a>
+                <a class="nav-link" href="index.php">Menu Principal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="chofer.php">Choferes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Camiones y Semis</a>
@@ -15,7 +18,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Proveedores</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Encomiendas</a>
             </li>
             </ul>
