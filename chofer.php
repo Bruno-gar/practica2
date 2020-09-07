@@ -26,10 +26,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>cuil</th>
-                        <th>nombre</th>
-                        <th>apellido</th>
-                        <th>fdsf</th>
+                        <th>Cuil</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
