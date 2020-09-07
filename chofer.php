@@ -16,11 +16,13 @@
             <?php include 'C:\xampp\htdocs\pp2\includes\navbar.php'?>
         </div>
         <div class="container">
+        <!-- botones de funcines -->
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-primary">Primary</button>
         </div>
         <div class="container">
+        <!-- tabla de los choferes -->
             <table class="table">
                 <thead>
                     <tr>
