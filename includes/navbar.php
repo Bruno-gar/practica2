@@ -1,3 +1,7 @@
+<head>
+        <script src="./js/jquery.js"></script> <!-- llamo a la biblioteca de Jquery-->
+        <script src="./js/main.js"></script> <!--llamo a mi programa de Jquery-->
+</head>
 <div class="heater">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">SLT</a> <!--Sistema de Logistica para Transporte-->
@@ -13,7 +17,10 @@
                 <a class="nav-link" href="chofer.php">Choferes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Camiones y Semis</a>
+                <a class="nav-link" href="#">Camiones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Semis</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Proveedores</a>
