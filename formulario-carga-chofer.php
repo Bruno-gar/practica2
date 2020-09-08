@@ -21,12 +21,12 @@
             <div class="table-responsive">
                 <!-- Form -->
                 <table class="table table">
-                <form class="text-center" style="color: #757575;" action="controllers\insertarchofer.php" method="POST">
+                <form class="text-center" style="color: #757575;" action="insertarchofer.php" method="post">
                     <tr>
                         <td>
                              <!-- nombre -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Nombre-Chofer" class="form-control">
+                                <input type="text" id="Nombre-Chofer" name="Nombre-Chofer" class="form-control">
                                 <label for="Nombre-Chofer">Nombre</label>
                             </div>
                         </td>

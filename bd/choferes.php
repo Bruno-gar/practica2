@@ -23,8 +23,15 @@ class chofer
         $this->vencimiento_art = $vencimiento_art;
     }
 
-    
-
+    public function getId(){return $this->id_chofer;}
+    public function getCuil(){return $this->cuil;}
+    public function getNombre(){return $this->nombre;}
+    public function getApellido(){return $this->apellido;}
+    public function getTelefono(){return $this->telefono;}
+    public function getPsico(){return $this->vencimiento_psicofisico;}
+    public function getCargas(){return $this->vencimiento_cargas_peligrosas;}
+    public function getArt(){return $this->vencimiento_art;}
+    public function getCeda(){return $this->vencimiento_manip_alimentos;}
 }
 
 

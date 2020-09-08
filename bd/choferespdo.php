@@ -26,8 +26,29 @@ class choferPDO
         }
 
     }
+    public function insert(){
 
-    function getAll(){
+        $insercion = $this->pdo->prepare("INSERT INTO chofer (Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
+        Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos) VALUES (?,?,?,?,?,?,?,?)");
+
+        $datos = [
+            $c->getCuil(),
+            $c->getNombre(),
+            $c->getApellido(),
+            $c->getTelefono(),
+            $c->getPsico(),
+            $c->getCargas(),
+            $c->getArt(),
+            $c->getCeda()
+        ];
+
+        if($insercion-> execute($datos))
+        {
+
+        }
+    }
+
+    public function getAll(){
         $insercion = $this->pdo->prepare("SELECT Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
         Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos FROM chofer");
         $insercion->execute();
