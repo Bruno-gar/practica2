@@ -1,6 +1,6 @@
 <?php
-    require_once 'C:\xampp\htdocs\pp2\bd\choferes.php';
-    require_once 'C:\xampp\htdocs\pp2\bd\choferespdo.php';
+    require_once 'choferes.php';
+    require_once 'choferespdo.php';
     $chofer []= new chofer (
         $_POST['Cuil-chofer'],
         $_POST['Nombre-Chofer'],
