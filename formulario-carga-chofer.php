@@ -8,10 +8,10 @@
     <body>
         
         <div>
-            <?php include '/includes/navbar.php'?>
+            <?php include 'C:\xampp\htdocs\pp2\includes\navbar.php'?>
         </div>
         
-        <div> <!-- formulario de carga --> 
+        <div > <!-- formulario de carga --> 
                         
             <div class="card" width="100%">
             <h5 class="card-header info-color white-text text-center py-4">
@@ -21,7 +21,7 @@
             <div class="table-responsive">
                 <!-- Form -->
                 <table class="table table">
-                <form class="text-center" style="color: #757575;" action="#!">
+                <form class="text-center" style="color: #757575;" action="controllers\insertarchofer.php" method="POST">
                     <tr>
                         <td>
                              <!-- nombre -->
@@ -100,7 +100,7 @@
         </div>
 
         <div>
-            <?php include '/includes/footer.php'?>
+            <?php include 'C:\xampp\htdocs\pp2\includes\footer.php'?>
         </div>
     </body>
 </html>

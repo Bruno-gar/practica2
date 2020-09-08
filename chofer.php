@@ -17,7 +17,7 @@
         </div>
         <div class="container">
         <!-- botones de funcines -->
-        <button type="button" class="btn btn-primary">Primary</button>
+        <a class="btn btn-primary btn-lg active" role="button" href="formulario-carga-chofer.php">Cargar Nuevo chofer</a>
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-primary">Primary</button>
         </div>

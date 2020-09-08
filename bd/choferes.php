@@ -19,8 +19,8 @@ class chofer
         $this->telefono = $telefono;
         $this->vencimiento_psicofisico = $vencimiento_psicofisico;
         $this->vencimiento_cargas_peligrosas = $vencimiento_cargas_peligrosas;
-        $this->vencimiento_art = $vencimiento_art;
         $this->vencimiento_manip_alimentos = $vencimiento_manip_alimentos;
+        $this->vencimiento_art = $vencimiento_art;
     }
 
     
