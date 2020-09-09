@@ -1,5 +1,5 @@
 <?php 
-    require_once 'C:\xampp\htdocs\pp2\bd\choferespdo.php';
+    require_once 'C:\xampp\htdocs\pp2\chofer\choferespdo.php';
     $pdo = new choferPDO();
     $c = $pdo->getAll();
 ?>
@@ -17,7 +17,7 @@
         </div>
         <div class="container">
         <!-- botones de funcines -->
-        <a class="btn btn-primary btn-lg active" role="button" href="formulario-carga-chofer.php">Cargar Nuevo chofer</a>
+        <a class="btn btn-primary btn-lg active" role="button" href="chofer\formulario-carga-chofer.php">Cargar Nuevo chofer</a>
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-primary">Primary</button>
         </div>

@@ -1,8 +1,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css\bootstrap.css">
+        <link rel="stylesheet" href="css\estilos.css">
     </head> 
 
     <body>
