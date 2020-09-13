@@ -1,7 +1,8 @@
 <?php
     require_once 'choferes.php';
     require_once 'choferespdo.php';
-    $chofer []= new chofer (
+   
+    $chofer = new chofer (
         $_POST['Cuil-chofer'],
         $_POST['Nombre-Chofer'],
         $_POST['Apellido-Chofer'],
@@ -14,5 +15,5 @@
     );
     $pdo = new choferPDO();
 
-    echo $pdo->instert($chofer);
+    echo $pdo->insert($chofer);
 ?>

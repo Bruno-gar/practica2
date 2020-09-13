@@ -21,7 +21,7 @@
             <div class="table-responsive">
                 <!-- Form -->
                 <table class="table table">
-                <form class="text-center" style="color: #757575;" action="insertarchofer.php" method="post">
+                <form class="text-center" style="color: #757575;" action="chofer/insertarchofer.php" method="post">
                     <tr>
                         <td>
                              <!-- nombre -->

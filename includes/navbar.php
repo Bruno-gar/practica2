@@ -14,7 +14,7 @@
                 <a class="nav-link" href="index.php">Menu Principal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="C:\xampp\htdocs\pp2\chofer.php">Choferes</a>
+                <a class="nav-link" href="chofer.php">Choferes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Camiones</a>
