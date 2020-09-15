@@ -25,14 +25,14 @@
                         <td>
                              <!-- nombre -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Nombre-Chofer" name="Nombre-Chofer" class="form-control">
+                                <input type="text" id="Nombre-Chofer" name="Nombre-Chofer"  class="form-control">
                                 <label for="Nombre-Chofer">Nombre</label>
                             </div>
                         </td>
                         <td>
                             <!-- apellido -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Apellido-Chofer" class="form-control">
+                                <input type="text" id="Apellido-Chofer" name="Apellido-Chofer"  class="form-control">
                                 <label for="Apellido-Chofer">Apellido</label>
                             </div>
                         </td>
@@ -41,14 +41,14 @@
                         <td>
                             <!-- telefono -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Telefono-Chofer" class="form-control">
+                                <input type="number" id="Telefono-Chofer" name="Telefono-Chofer" class="form-control">
                                 <label for="Telefono-Chofer">Telefono</label>
                             </div>
                         </td>
                         <td>
                             <!-- cuil -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Cuil-Chofer" class="form-control">
+                                <input type="number" id="Cuil-Chofer" name="Cuil-Chofer" class="form-control">
                                 <label for="Cuil-Chofer">Cuil</label>
                             </div>
                         </td>
@@ -57,14 +57,14 @@
                         <td>
                             <!-- Vto Psicofisico -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Psico-Chofer" class="form-control">
+                                <input type="date" id="Vto-Psico-Chofer" name="Vto-Psico-Chofer" class="form-control">
                                 <label for="Vto-Psico-Chofer">Vencimiento Psicofisico</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto Cargas Peligrosas -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Cargas-Peligrosas-Chofer" class="form-control">
+                                <input type="date" id="Vto-Cargas-Peligrosas-Chofer" name="Vto-Cargas-Peligrosas-Chofer"  class="form-control">
                                 <label for="Vto-Cargas-Peligrosas-Chofer">Vencimiento Cargas Peligrosas</label>
                             </div>
                         </td>
@@ -73,14 +73,14 @@
                         <td>
                             <!-- Vto CEDA -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Ceda-Chofer" class="form-control">
+                                <input type="date" id="Vto-Ceda-Chofer" name="Vto-Ceda-Chofer" class="form-control">
                                 <label for="Vto-Ceda-Chofer">Vencimiento CEDA</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto ART -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Art-Chofer" class="form-control">
+                                <input type="date" id="Vto-Art-Chofer" name="Vto-Art-Chofer" class="form-control">
                                 <label for="Vto-Art-Chofer">Vencimiento ART</label>
                             </div>
                         </td>
