@@ -26,7 +26,7 @@ class choferPDO
         }
 
     }
-    public function insert(){
+    public function insert($c){
 
         $insercion = $this->pdo->prepare("INSERT INTO chofer (Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
         Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos) VALUES (?,?,?,?,?,?,?,?)");

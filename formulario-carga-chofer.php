@@ -6,9 +6,8 @@
     </head> 
 
     <body>
-        
         <div>
-            <?php include 'C:\xampp\htdocs\pp2\includes\navbar.php'?>
+            <?php include 'includes\navbar.php'?>
         </div>
         
         <div > <!-- formulario de carga --> 
@@ -100,7 +99,7 @@
         </div>
 
         <div>
-            <?php include 'C:\xampp\htdocs\pp2\includes\footer.php'?>
+            <?php include 'includes\footer.php'?>
         </div>
     </body>
 </html>

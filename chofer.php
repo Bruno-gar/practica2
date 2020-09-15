@@ -1,5 +1,5 @@
 <?php 
-    require_once 'C:\xampp\htdocs\pp2\chofer\choferespdo.php';
+    require_once 'chofer\choferespdo.php';
     $pdo = new choferPDO();
     $c = $pdo->getAll();
 ?>
@@ -13,7 +13,7 @@
     <body>
         
         <div>
-            <?php include 'C:\xampp\htdocs\pp2\includes\navbar.php'?>
+            <?php include 'includes\navbar.php'?>
         </div>
         <div class="container">
         <!-- botones de funcines -->
@@ -45,7 +45,7 @@
             </table>
         </div>
         <div>
-            <?php include 'C:\xampp\htdocs\pp2\includes\footer.php'?>
+            <?php include 'includes\footer.php'?>
         </div>
     </body>
 </html>
