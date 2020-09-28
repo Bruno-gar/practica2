@@ -18,6 +18,7 @@
         <div class="container">
         <!-- botones de funcines -->
         <a class="btn btn-primary btn-lg active" role="button" href="formulario-carga-chofer.php">Cargar Nuevo chofer</a>
+        <a class="btn btn-primary btn-lg active" role="button" href="chofer/vencimientos.php">vencimientos mas cercanos</a>
         </div>
         <div class="container">
         <!-- tabla de los choferes -->
@@ -39,6 +40,7 @@
                         <td><?php echo $chofer->nombre; ?></td>
                         <td><?php echo $chofer->apellido;?></td>
                         <td><?php echo $chofer->telefono;?></td>
+                        <td><a class="btn btn-primary btn-lg active" role="button" href="">modificar</a></td>
                         <?php } ?>
                     </tr>
                 </tbody>

@@ -61,6 +61,18 @@ class choferPDO
         return $chofer;
     }
 
+    public function getVencimientos(){
+        $insercion = $this->pdo->prepare("SELECT Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
+        Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos FROM chofer");
+        $insercion->execute();
+        while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+        {
+            $c= new chofer($result->Cuil,$result->Nombre,$result->Apellido,$result->Telefono,$result->Vencimiento_Psicofisico,$result->Vencimiento_Cargas_Peligrosas,$result->Vencimiento_Art,$result->Vencimiento_Manip_Alimentos);
+            $chofer[]=$c;
+        }
+        return $chofer;
+    }
+
 }
 
 ?>
