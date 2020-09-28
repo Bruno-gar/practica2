@@ -1,35 +1,31 @@
 <?php
-    require_once 'proveedorpdo.php';
 class proveedor{
 
     public $id_proveedor = null;
-    public $cuit;
-    public $nombre;
-    public $telefono;
-    public $codigo_postal;
-    public $localidad;
-    public $calle;
-    public $numero_calle;
+    public $Cuit;
+    public $Nombre;
+    public $Telefono;
+    public $Calle;
+    public $Numero;
+    public $Localidad;
 
-    public function __construct($cuit,$nombre,$telefono,$codigo_postal,$localidad,$calle,$numero_calle)
+    public function __construct($cuit,$nombre,$telefono,$localidad,$calle,$numero)
     {
-        $this->cuit = $cuit;
-        $this->nombre = $nombre;
-        $this->telefono = $telefono;
-        $this->codigo_postal = $codigo_postal;
-        $this->localidad = $localidad;
-        $this->calle = $calle;
-        $this->numero_calle = $numero_calle;
+        $this->Cuit = $cuit;
+        $this->Nombre = $nombre;
+        $this->Telefono = $telefono;
+        $this->Calle = $calle;
+        $this->Numero= $numero;
+        $this->Localidad = $localidad;
+
     }
 
-    public function getCuit(){return $this->cuit;}
-    public function getNombre(){return $this->nombre;}
-    public function getTelefono(){return $this->telefono;}
-    public function getCodigo_postarl(){return $this->codigo_postal;}
-    public function getLocalidad(){return $this->localidad;}
-    public function getCalle(){return $this->calle;}
-    public function getNumero_calle(){return $this->numero_calle;}
-    public funcrion get
+    public function getCuit(){return $this->Cuit;}
+    public function getNombre(){return $this->Nombre;}
+    public function getTelefono(){return $this->Telefono;}
+    public function getCalle(){return $this->Calle;}
+    public function getNumero_calle(){return $this->Numero;}
+    public function getLocalidad(){return $this->Localidad;}
 }
 
 

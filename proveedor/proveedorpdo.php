@@ -1,5 +1,5 @@
 <?php
-    require_once "proveedores.php"
+    require_once "proveedores.php";
     class proveedorpdo
     {
         private $configuracion = [
@@ -24,14 +24,60 @@
             catch(PDOexception $e){
                 die("¡error!". $e-getmessage() . "<br>");
             }
+        }
+
         
-        public function 
+        public function getLocalidadId($localidad)
+        {
+            $insercion = $this->pdo->prepare("SELECT ID_Localidad FROM localidad where Localidad = '$localidad'");
+            $insercion->execute();
+            if($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+               return $result->ID_Localidad;
+
+            }
+            else{
+                $s = $this->pdo->prepare("INSERT INTO localidad (Localidad) VALUES (?)");
+                $datos=[$localidad];
+                if($s ->execute($datos)){
+                    $this->getLocalidadId($localidad);
+                }
+                
+            }
+        }
+
 
         public function insert($p)
         {
-            $insercion = $this->pdo->prepare("INSERT INTO direccion (Codigo_postal, Localidad, Calle, Numero_Calle) VALUES (?,?,?,?);INSERT INTO empresa_destino (Cuit, Nombre, Telefono, id_Direccion ) VALUES (?,?,?,?)");
+                $insercion = $this->pdo->prepare("INSERT INTO empresa_destino (Cuit, Nombre, Telefono, calle, 
+            numero, ID_Localidad) VALUES (?,?,?,?,?,?)");
+
+            $datos = [
+                $p->getCuit(),
+                $p->getNombre(),
+                $p->getTelefono(),
+                $p->getCalle(),
+                $p->getNumero_calle(),
+                $this->getLocalidadId($p->getLocalidad())
+            ];
+
+            if($insercion-> execute($datos))
+            {
+                header("Location: ../proveedor.php?mensaje=1");
+                die();
+            }
         }
 
+        public function getAll(){
+            $insercion = $this->pdo->prepare("SELECT ed.Cuit, ed.Nombre, ed.Telefono, ed.calle, ed.numero, l.localidad FROM empresa_destino as ed JOIN localidad as l on ed.ID_Localidad = l.ID_Localidad  ");
+            $insercion->execute();
+            while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+                $p= new proveedor($result->Cuit,$result->Nombre,$result->Telefono,$result->calle,$result->numero,$result->localidad);
+                $proveedor[]=$p;
+            }
+            return $proveedor;
+        }
     }
 
 ?>

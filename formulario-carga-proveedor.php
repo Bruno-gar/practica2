@@ -8,7 +8,7 @@
     <body>
         
         <div>
-            <?php include '/includes/navbar.php'?>
+            <?php include 'includes/navbar.php'?>
         </div>
         
         <div> <!-- formulario de carga --> 
@@ -21,19 +21,19 @@
             <div class="table-responsive">
                 <!-- Form -->
                 <table class="table table">
-                <form class="text-center" style="color: #757575;" action="#!">
+                <form class="text-center" style="color: #757575;" action="proveedor/insertarproveedor.php" method="post">
                     <tr>
                         <td>
                              <!-- CUIT -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Cuit-Proveedor" class="form-control">
+                                <input type="number" id="Cuit-Proveedor" name="Cuit-Proveedor"class="form-control">
                                 <label for="Cuit-Proveedor">CUIT</label>
                             </div>
                         </td>
                         <td>
                             <!-- Nombre -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Nombre-Proveedor" class="form-control">
+                                <input type="text" id="Nombre-Proveedor" name="Nombre-Proveedor" class="form-control">
                                 <label for="Nombre-Proveedor">Nombre</label>
                             </div>
                         </td>
@@ -42,24 +42,31 @@
                         <td>
                              <!-- Telefono -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Telefono-Proveedor" class="form-control">
+                                <input type="number" id="Telefono-Proveedor" name="Telefono-Proveedor" class="form-control">
                                 <label for="Telefono-Proveedor">Telefono</label>
                             </div>
                         </td>
                         <td>
                             <!-- Localidad -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Localidad-Proveedor" class="form-control">
+                                <input type="text" id="Localidad-Proveedor" name="Localidad-Proveedor" class="form-control">
                                 <label for="Localidad-Proveedor">Localidad</label>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td>
                             <!-- Direccion -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Direccion-Proveedor" class="form-control">
-                                <label for="Direccion-Proveedor">Direccion</label>
+                                <input type="text" id="Calle-Proveedor" name="Calle-Proveedor" class="form-control">
+                                <label for="Calle-Proveedor">Calle</label>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- Direccion -->
+                            <div class="md-form mt-3">
+                                <input type="text" id="Numero-Proveedor" name="Numero-Proveedor" class="form-control">
+                                <label for="Numero-Proveedor">Numero</label>
                             </div>
                         </td>
                     </tr>
@@ -77,7 +84,7 @@
         </div>
 
         <div>
-            <?php include '/includes/footer.php'?>
+            <?php include 'includes/footer.php'?>
         </div>
     </body>
 </html>

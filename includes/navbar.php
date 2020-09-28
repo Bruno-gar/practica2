@@ -23,7 +23,7 @@
                 <a class="nav-link" href="semi.php">Semis</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Proveedores</a>
+                <a class="nav-link" href="proveedor.php">Proveedores</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Encomiendas</a>
