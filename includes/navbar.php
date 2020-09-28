@@ -17,10 +17,10 @@
                 <a class="nav-link" href="chofer.php">Choferes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Camiones</a>
+                <a class="nav-link" href="camion.php">Camiones</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Semis</a>
+                <a class="nav-link" href="semi.php">Semis</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Proveedores</a>

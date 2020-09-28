@@ -44,7 +44,7 @@ class choferPDO
 
         if($insercion-> execute($datos))
         {
-            header("Location: ../chofer.php");
+            header("Location: ../chofer.php?mensaje=1");
             die();
         }
     }

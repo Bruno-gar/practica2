@@ -1,5 +1,5 @@
 <?php
-class semi
+class camion
 {
     public $ID_Semi = null;
     public $Patente;

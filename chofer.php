@@ -1,7 +1,13 @@
 <?php 
     require_once 'chofer\choferespdo.php';
+    $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null ;
     $pdo = new choferPDO();
     $c = $pdo->getAll();
+    if($mensaje == 1){
+        echo'<script type="text/javascript">
+            alert("Exito al cargar");
+            </script>';
+    }
 ?>
 <html>
     <head>

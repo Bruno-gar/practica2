@@ -1,6 +1,6 @@
 <?php
-require_once 'semis.php';
-class semisPDO
+require_once 'camiones.php';
+class camionesPDO
 {
     private $configuracion = [
         'servidor' => 'localhost',
@@ -27,7 +27,7 @@ class semisPDO
     }
     public function insert($c){
 
-        $insercion = $this->pdo->prepare("INSERT INTO semi (Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
+        $insercion = $this->pdo->prepare("INSERT INTO camion (Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
         Vencimiento_Senasa, Vencimiento_Bromatologia, Vencimiento_Seguro) VALUES (?,?,?,?,?,?,?,?)");
 
         $datos = [
@@ -43,21 +43,21 @@ class semisPDO
 
         if($insercion-> execute($datos))
         {
-            header("Location: ../semi.php?mensaje=1");
+            header("Location: ../camion.php?mensaje=1");
             die();
         }
     }
 
     public function getAll(){
         $insercion = $this->pdo->prepare("SELECT Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
-        Vencimiento_Senasa, Vencimiento_Bromatologia,Vencimiento_Seguro FROM semi");
+        Vencimiento_Senasa, Vencimiento_Bromatologia,Vencimiento_Seguro FROM camion");
         $insercion->execute();
         while ($result = $insercion->fetch(PDO::FETCH_OBJ))
         {
-            $c= new semi($result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
-            $semi[]=$c;
+            $c= new camion($result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
+            $camion[]=$c;
         }
-        return $semi;
+        return $camion;
     }
 
 }
