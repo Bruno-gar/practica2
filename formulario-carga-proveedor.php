@@ -1,3 +1,19 @@
+<?php 
+    require_once 'proveedor\proveedorpdo.php';
+    $pdo = new proveedorPDO();
+    $p = $pdo->getLocalidades();
+    $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null ;
+    if($mensaje == 1){
+        echo'<script type="text/javascript">
+                alert("Exito al cargar");
+             </script>';
+    }
+    elseif($mensaje == 2){
+        echo'<script type="text/javascript">
+                alert("La empresa ya exite");
+             </script>';
+    }
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -49,7 +65,14 @@
                         <td>
                             <!-- Localidad -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Localidad-Proveedor" name="Localidad-Proveedor" class="form-control">
+                                <select class="custom-select" name="Localidad-Proveedor">
+                                    <option selected>Open this select menu</option>
+                                    <?php
+                                        foreach($p as $proveedor){
+                                    ?>
+                                    <option value="<?php echo $proveedor;?>"><?php echo $proveedor;?></option>
+                                    <?php } ?>
+                                </select>
                                 <label for="Localidad-Proveedor">Localidad</label>
                             </div>
                         </td>

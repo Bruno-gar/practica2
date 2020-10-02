@@ -9,7 +9,7 @@ class proveedor{
     public $Numero;
     public $Localidad;
 
-    public function __construct($cuit,$nombre,$telefono,$localidad,$calle,$numero)
+    public function __construct($cuit,$nombre,$telefono,$calle,$numero,$localidad)
     {
         $this->Cuit = $cuit;
         $this->Nombre = $nombre;

@@ -35,9 +35,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Patente</th>
-                        <th>Marca</th>
-                        <th>Año</th>
+                        <th>Cuit</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Calle</th>
+                        <th>Numero</th>
+                        <th>Localidad</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +51,9 @@
                         <td><?php echo $proveedor->Cuit;?></td>
                         <td><?php echo $proveedor->Nombre; ?></td>
                         <td><?php echo $proveedor->Telefono;?></td>
+                        <td><?php echo $proveedor->Calle;?></td>
+                        <td><?php echo $proveedor->Numero;?></td>
+                        <td><?php echo $proveedor->Localidad;?></td>
                         <?php } ?>
                     </tr>
                 </tbody>

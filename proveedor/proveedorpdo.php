@@ -46,7 +46,6 @@
             }
         }
 
-
         public function insert($p)
         {
             $c = $p->getCuit();
@@ -88,6 +87,16 @@
                 $proveedor[]=$p;
             }
             return $proveedor;
+        }
+        public function getLocalidades(){
+            $insercion = $this->pdo->prepare("SELECT localidad FROM localidad ");
+            $insercion->execute();
+            while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+                $p[]= $result->localidad;
+                
+            }
+            return $p;
         }
     }
 
