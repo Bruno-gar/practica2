@@ -49,22 +49,33 @@
 
         public function insert($p)
         {
-                $insercion = $this->pdo->prepare("INSERT INTO empresa_destino (Cuit, Nombre, Telefono, calle, 
-            numero, ID_Localidad) VALUES (?,?,?,?,?,?)");
-
-            $datos = [
-                $p->getCuit(),
-                $p->getNombre(),
-                $p->getTelefono(),
-                $p->getCalle(),
-                $p->getNumero_calle(),
-                $this->getLocalidadId($p->getLocalidad())
-            ];
-
-            if($insercion-> execute($datos))
+            $c = $p->getCuit();
+            $insercion = $this->pdo->prepare("SELECT Cuit FROM empresa_destino where Cuit = $c");
+            $insercion->execute();
+            if( $insercion->fetch(PDO::FETCH_OBJ))
             {
-                header("Location: ../proveedor.php?mensaje=1");
-                die();
+                header("Location: ../proveedor.php?mensaje=2");
+                    die();
+            }
+            else
+            {
+                $insercion = $this->pdo->prepare("INSERT INTO empresa_destino (Cuit, Nombre, Telefono, calle, 
+                numero, ID_Localidad) VALUES (?,?,?,?,?,?)");
+
+                $datos = [
+                    $p->getCuit(),
+                    $p->getNombre(),
+                    $p->getTelefono(),
+                    $p->getCalle(),
+                    $p->getNumero_calle(),
+                    $this->getLocalidadId($p->getLocalidad())
+                ];
+
+                if($insercion-> execute($datos))
+                {
+                    header("Location: ../proveedor.php?mensaje=1");
+                    die();
+                }
             }
         }
 
