@@ -11,8 +11,9 @@ class semi
     public $Vencimiento_Bromatologia;
     public $Vencimiento_Seguro;
 
-    public function __construct ($patente,$km,$anio,$marca,$vto_tecnica,$vto_senasa,$vto_bromatologia,$vto_seguro)
+    public function __construct ($idSemi,$patente,$km,$anio,$marca,$vto_tecnica,$vto_senasa,$vto_bromatologia,$vto_seguro)
     {
+        $this->ID_Semi = $idSemi;
         $this->Patente = $patente;
         $this->Kilometros = $km;
         $this->Anio = $anio;

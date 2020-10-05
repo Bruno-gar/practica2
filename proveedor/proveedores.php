@@ -1,7 +1,7 @@
 <?php
 class proveedor{
 
-    public $id_proveedor = null;
+    public $id_proveedor;
     public $Cuit;
     public $Nombre;
     public $Telefono;
@@ -9,8 +9,9 @@ class proveedor{
     public $Numero;
     public $Localidad;
 
-    public function __construct($cuit,$nombre,$telefono,$calle,$numero,$localidad)
+    public function __construct($idPro,$cuit,$nombre,$telefono,$calle,$numero,$localidad)
     {
+        $this->id_proveedor = $idPro;
         $this->Cuit = $cuit;
         $this->Nombre = $nombre;
         $this->Telefono = $telefono;
@@ -20,6 +21,7 @@ class proveedor{
 
     }
 
+    public function getid(){return $this->id_proveedor;}
     public function getCuit(){return $this->Cuit;}
     public function getNombre(){return $this->Nombre;}
     public function getTelefono(){return $this->Telefono;}

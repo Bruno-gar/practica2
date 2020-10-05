@@ -11,8 +11,9 @@ class chofer
     public $vencimiento_art;
     public $vencimiento_manip_alimentos;
 
-    public function __construct ($cuil,$nombre,$apellido,$telefono,$vencimiento_psicofisico,$vencimiento_cargas_peligrosas,$vencimiento_art,$vencimiento_manip_alimentos)
+    public function __construct ($idChofer,$cuil,$nombre,$apellido,$telefono,$vencimiento_psicofisico,$vencimiento_cargas_peligrosas,$vencimiento_art,$vencimiento_manip_alimentos)
     {
+        $this->id_chofer = $idChofer;
         $this->cuil = $cuil;
         $this->nombre = $nombre;
         $this->apellido = $apellido;

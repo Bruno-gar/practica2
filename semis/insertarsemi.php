@@ -10,7 +10,7 @@
     $g =$_POST['Vto-Bromatologia-Semi'];
     $h =$_POST['Vto-Seguro-Semi'];
 
-    $semis = new semi ($a,$b,$c,$d,$e,$f,$g,$h);
+    $semis = new semi ("null",$a,$b,$c,$d,$e,$f,$g,$h);
     $pdo = new semisPDO();
 
     echo $pdo->insert($semis);

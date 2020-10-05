@@ -49,12 +49,12 @@ class semisPDO
     }
 
     public function getAll(){
-        $insercion = $this->pdo->prepare("SELECT Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
+        $insercion = $this->pdo->prepare("SELECT ID_Semi, Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
         Vencimiento_Senasa, Vencimiento_Bromatologia,Vencimiento_Seguro FROM semi");
         $insercion->execute();
         while ($result = $insercion->fetch(PDO::FETCH_OBJ))
         {
-            $c= new semi($result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
+            $c= new semi($result->ID_Semi,$result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
             $semi[]=$c;
         }
         return $semi;

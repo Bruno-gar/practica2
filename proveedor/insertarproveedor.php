@@ -8,7 +8,8 @@
     $e = $_POST['Calle-Proveedor'];
     $f = $_POST['Numero-Proveedor'];
 
-    $p = new proveedor ($a,$b,$c,$d,$e,$f);
+    echo $d;
+    $p = new proveedor ("null",$a,$b,$c,$e,$f,$d);
     $pdo = new proveedorpdo();
 
     echo $pdo->insert($p);

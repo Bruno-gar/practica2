@@ -10,7 +10,7 @@
     $g =$_POST['Vto-Ceda-Chofer'];
     $h =$_POST['Vto-Art-Chofer'];
 
-    $chofer = new chofer ($a,$b,$c,$d,$e,$f,$g,$h);
+    $chofer = new chofer ("null",$a,$b,$c,$d,$e,$f,$g,$h);
     $pdo = new choferPDO();
 
     echo $pdo->insert($chofer);

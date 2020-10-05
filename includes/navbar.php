@@ -26,7 +26,7 @@
                 <a class="nav-link" href="proveedor.php">Proveedores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Encomiendas</a>
+                <a class="nav-link" href="encomiendas.php">Encomiendas</a>
             </li>
             </ul>
         </div>

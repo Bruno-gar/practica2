@@ -66,7 +66,7 @@
                             <!-- Localidad -->
                             <div class="md-form mt-3">
                                 <select class="custom-select" name="Localidad-Proveedor">
-                                    <option selected>Open this select menu</option>
+                                    <option selected>elija la localidad</option>
                                     <?php
                                         foreach($p as $proveedor){
                                     ?>
@@ -74,6 +74,7 @@
                                     <?php } ?>
                                 </select>
                                 <label for="Localidad-Proveedor">Localidad</label>
+                                <a class="btn btn-secondary active" role="button" href="proveedor/insertarlocalidad.php">nueva localidad</a>
                             </div>
                         </td>
                     </tr>

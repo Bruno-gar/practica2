@@ -10,7 +10,7 @@
     $g = $_POST['Vto-Bromatologia-Camion'];
     $h = $_POST['Vto-Seguro-Camion'];
 
-    $camiones = new camion ($a,$b,$c,$d,$e,$f,$g,$h);
+    $camiones = new camion ("null",$a,$b,$c,$d,$e,$f,$g,$h);
     $pdo = new camionesPDO();
 
     echo $pdo->insert($camiones);

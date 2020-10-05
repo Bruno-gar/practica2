@@ -1,28 +1,67 @@
 <?php
+    require_once "encomienda.php";
 
-class encomienda
+    class encomiendapdo{
 
-    {
-        public $fecha;
-        public $id_chofer;
-        public $id_camion;
-        public $id_semi;
-        public $id_empresa;
-        public $importe;
+        private $configuracion = [
+            'servidor' => 'localhost',
+            'usuario' => 'root',
+            'password' => '',
+            'baseDatos' =>'camiones'
+    
+    
+        ];
 
-        public __construct($fe,$idcho,$idcam,$idsem,$idemp,$imp){
-            $this->fecha = $fe;
-            $this->id_chofer = $idcho;
-            $this->id_camion = $idcam;
-            $this->id_semi = $idsem;
-            $this->id_empresa = $idemp;
-            $this->importe = $imp;
+        public function __construct()
+        {
+            try{
+                $this->pdo = new PDO(
+                    "mysql:host={$this->configuracion['servidor']};
+                     dbname={$this->configuracion['baseDatos']};charset=utf8",
+                     $this->configuracion['usuario'],
+                     $this->configuracion['password']
+                 );
+            }
+            catch(PDOexception $e){
+                die("¡error!". $e-getmessage() . "<br>");
+            }
+        }
+
+        public function insert($e){
+
+            $insercion = $this->pdo->prepare("INSERT INTO encomienda (Fecha, ID_Chofer, ID_Camion, ID_Semi, ID_Empresa_Destino, Importe) VALUES (?,?,?,?,?,?);");
+    
+            $datos = [
+                $e->getfecha(),
+                $e->getidchofer(),
+                $e->getidcamion(),
+                $e->getidsemi(),
+                $e->getidempresa(),
+                $e->getimporte()
+            ];
+    
+            if($insercion-> execute($datos))
+            {
+                header("Location: ../encomiendas.php?mensaje=1");
+                die();
+            }
         }
 
 
 
-    }   
 
+
+
+
+
+
+
+
+
+
+
+        
+    }
 
 
 ?>

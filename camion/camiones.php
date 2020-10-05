@@ -1,7 +1,7 @@
 <?php
 class camion
 {
-    public $ID_Semi = null;
+    public $ID_Camion;
     public $Patente;
     public $Kilometros;
     public $Anio;
@@ -11,8 +11,9 @@ class camion
     public $Vencimiento_Bromatologia;
     public $Vencimiento_Seguro;
 
-    public function __construct ($patente,$km,$anio,$marca,$vto_tecnica,$vto_senasa,$vto_bromatologia,$vto_seguro)
+    public function __construct ($idCamion,$patente,$km,$anio,$marca,$vto_tecnica,$vto_senasa,$vto_bromatologia,$vto_seguro)
     {
+        $this->ID_Camion = $idCamion;
         $this->Patente = $patente;
         $this->Kilometros = $km;
         $this->Anio = $anio;
@@ -23,7 +24,7 @@ class camion
         $this->Vencimiento_Seguro = $vto_seguro;
     }
 
-    public function getId(){return $this->ID_Semi;}
+    public function getId(){return $this->ID_Camion;}
     public function getPatente(){return $this->Patente;}
     public function getKilometros(){return $this->Kilometros;}
     public function getAnio(){return $this->Anio;}
