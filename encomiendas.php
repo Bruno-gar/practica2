@@ -1,6 +1,8 @@
 <?php 
     require_once 'encomiendas\encomiendapdo.php';
     $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null ;
+    $pdo = new encomiendaPDO();
+    $e = $pdo->getAll();
     if($mensaje == 1){
         echo'<script type="text/javascript">
                 alert("Exito al cargar");
@@ -34,14 +36,27 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Cuil</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Telefono</th>
+                        <th>Fecha</th>
+                        <th>Nombre del Chofer</th>
+                        <th>Patente Camion</th>
+                        <th>Patente semi</th>
+                        <th>empresa proveedora</th>
+                        <th>importe</th>
                     </tr>
                 </thead>
                 <tbody>
-                   
+                <?php
+                        foreach($e as $encomienda){
+                    ?>
+                    <tr>
+                        <td><?php echo $encomienda->fecha;?></td>
+                        <td><?php echo $encomienda->id_chofer; ?></td>
+                        <td><?php echo $encomienda->id_camion;?></td>
+                        <td><?php echo $encomienda->id_semi;?></td>
+                        <td><?php echo $encomienda->id_empresa;?></td>
+                        <td>$<?php echo $encomienda->importe;?></td>
+                        <?php } ?>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -47,19 +47,16 @@
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public function getAll(){
+            $insercion = $this->pdo->prepare("SELECT en.Fecha, ch.Nombre, ca.Patente, se.Patente, em.Nombre, en.Importe FROM encomienda as en JOIN chofer as ch on en.ID_Chofer = ch.ID_Chofer JOIN camion as ca on en.ID_Camion = ca.ID_Camion JOIN semi as se on en.ID_Semi = se.ID_Semi JOIN empresa_destino as em on en.ID_Empresa_Destino = em.ID_Empresa_Destino");
+            $insercion->execute();
+            while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+                $e= new encomienda("null",$result->Fecha,$result->Nombre,$result->Patente,$result->Patente,$result->Nombre,$result->Importe);
+                $encomienda[]=$e;
+            }
+            return $encomienda;
+        }
         
     }
 
