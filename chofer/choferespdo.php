@@ -48,6 +48,28 @@ class choferPDO
             die();
         }
     }
+    public function update($c){
+
+        $id= $this->getidc($c);
+        $n = $c->getNombre();
+        $a = $c->getApellido();
+        $t = $c->getTelefono();
+        $ps = $c->getPsico();
+        $ca = $c->getCargas();
+        $ar = $c->getArt();
+        $ce = $c->getCeda();
+        $insercion = $this->pdo->prepare("UPDATE chofer SET (Nombre = '$n', Apellido ='$a', Telefono='$t', Vencimiento_Psicofisico='$ps', 
+        Vencimiento_Cargas_Peligrosas='$ca', Vencimiento_Art='$ar', Vencimiento_Manip_Alimentos='$ce') WHERE 'ID_Chofer' = '$id'");
+
+        if($insercion-> execute())
+        {
+            header("Location: ../chofer.php?mensaje=1");
+            die();
+        }
+        else{
+            echo "murio";
+        }
+    }
 
     public function getAll(){
         $insercion = $this->pdo->prepare("SELECT ID_Chofer ,Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
@@ -71,6 +93,17 @@ class choferPDO
             $chofer[]=$c;
         }
         return $chofer;
+    }
+
+    private function getidc($c){
+        $cuil = $c->getCuil();
+        $insercion = $this->pdo->prepare("SELECT ID_Chofer FROM chofer where cuil ='$cuil'");
+            $insercion->execute();
+            if($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+               return $result->ID_Chofer;
+
+            }
     }
 
 }

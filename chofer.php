@@ -46,7 +46,7 @@
                         <td><?php echo $chofer->nombre; ?></td>
                         <td><?php echo $chofer->apellido;?></td>
                         <td><?php echo $chofer->telefono;?></td>
-                        <td><a class="btn btn-primary btn-lg active" role="button" href="">modificar</a></td>
+                        <td><a class="btn btn-primary btn-lg active" role="button" href="formulario-modificacion-chofer.php?cuil=<?php echo $chofer->cuil; ?>">modificar</a></td>
                         <?php } ?>
                     </tr>
                 </tbody>
