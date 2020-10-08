@@ -32,14 +32,14 @@
                         <td>
                              <!-- Patente -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Patente-Camion" name="Patente-Camion" value="<?php echo $c->Patente ;?>"  class="form-control">
+                                <input type="text" id="Patente-Camion" readonly name="Patente-Camion" value="<?php echo $c->Patente ;?>"  class="form-control">
                                 <label for="Patente-Camion">Patente</label>
                             </div>
                         </td>
                         <td>
                             <!-- Kilometraje -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Kilometros-Camion" name="Kilometros-Camion" value="<?php echo $c->Kilometros; ?>" class="form-control">
+                                <input type="number" id="Kilometros-Camion" readonly name="Kilometros-Camion" value="<?php echo $c->Kilometros; ?>" class="form-control">
                                 <label for="Kilometros-Camion">Kilometraje</label>
                             </div>
                         </td>
@@ -48,14 +48,14 @@
                         <td>
                             <!-- Año -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Año-Camion" name="Año-Camion" value="<?php echo $c->Anio; ?>" class="form-control">
+                                <input type="number" id="Año-Camion" readonly name="Año-Camion" value="<?php echo $c->Anio; ?>" class="form-control">
                                 <label for="Año-Camion">Año/Modelo</label>
                             </div>
                         </td>
                         <td>
                             <!-- Marca -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Marca-Camion" name="Marca-Camion" value="<?php echo $c->Marca;?>" class="form-control">
+                                <input type="text" id="Marca-Camion" readonly name="Marca-Camion" value="<?php echo $c->Marca;?>" class="form-control">
                                 <label for="Marca-Camion">Marca</label>
                             </div>
                         </td>

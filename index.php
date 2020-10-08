@@ -10,7 +10,44 @@
         <div>
             <?php include 'includes/navbar.php'?>
         </div>
-
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="">
+                    <div class="card-header">
+                        Vencimientos choferes
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="">
+                    <div class="card-header">
+                        vencimientos camiones
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="">
+                    <div class="card-header">
+                        vencimientos semis
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div>
             <?php include 'includes/footer.php'?>
         </div>
