@@ -58,10 +58,10 @@ class choferPDO
         $ca = $c->getCargas();
         $ar = $c->getArt();
         $ce = $c->getCeda();
-        $insercion = $this->pdo->prepare("UPDATE chofer SET (Nombre = '$n', Apellido ='$a', Telefono='$t', Vencimiento_Psicofisico='$ps', 
-        Vencimiento_Cargas_Peligrosas='$ca', Vencimiento_Art='$ar', Vencimiento_Manip_Alimentos='$ce') WHERE 'ID_Chofer' = '$id'");
-
-        if($insercion-> execute())
+        $insercion = $this->pdo->prepare("UPDATE chofer SET Nombre = '$n', Apellido ='$a', Telefono='$t', Vencimiento_Psicofisico='$ps', 
+        Vencimiento_Cargas_Peligrosas='$ca', Vencimiento_Art='$ar', Vencimiento_Manip_Alimentos='$ce'  WHERE ID_Chofer = $id");
+        
+        if($insercion-> execute($datos))
         {
             header("Location: ../chofer.php?mensaje=1");
             die();

@@ -59,7 +59,44 @@ class semisPDO
         }
         return $semi;
     }
+    public function update($semi){
+        $id= $this->getids($semi);
+        $te= $semi->getTecnica();
+        $se= $semi->getSenasa();
+        $br= $semi->getBromatologia();
+        $seg= $semi->getSeguro();
+        $insercion = $this->pdo->prepare("UPDATE semi SET  Vencimiento_Tecnica = $te,
+        Vencimiento_Senasa = $se , Vencimiento_Bromatologia = $br , Vencimiento_Seguro = $seg WHERE ID_Semi = $id");
 
+        if($insercion-> execute())
+        {
+            header("Location: ../semi.php?mensaje=1");
+            die();
+        }
+    }
+
+    
+    private function getids($semi){
+        $patente = $semi->getPatente();
+        $insercion = $this->pdo->prepare("SELECT ID_Semi FROM semi where Patente ='$patente'");
+            $insercion->execute();
+            if($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+               return $result->ID_Semi;
+
+            }
+    }
+
+    public function getById($id){
+        $insercion = $this->pdo->prepare("SELECT ID_Semi ,Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
+        Vencimiento_Senasa, Vencimiento_Bromatologia,Vencimiento_Seguro FROM semi where ID_Semi = $id");
+        $insercion->execute();
+        while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+        {
+            $c= new semi($result->ID_Semi,$result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
+        }
+        return $c;
+    }
 }
 
 ?>

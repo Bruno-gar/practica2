@@ -47,6 +47,23 @@ class camionesPDO
             die();
         }
     }
+    public function update($c){
+        
+        $id= $this->getidc($c);
+        $te=$c->getTecnica();
+        $se=$c->getSenasa();
+        $br=$c->getBromatologia();
+        $seg=$c->getSeguro();
+        $insercion = $this->pdo->prepare("UPDATE camion SET  Vencimiento_Tecnica = $te,
+        Vencimiento_Senasa = $se, Vencimiento_Bromatologia = $br, Vencimiento_Seguro = $seg  where ID_Camion = $id ");
+
+        if($insercion-> execute($datos))
+        {
+            header("Location: ../camion.php?mensaje=1");
+            die();
+        }
+    }
+
 
     public function getAll(){
         $insercion = $this->pdo->prepare("SELECT ID_Camion ,Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
@@ -58,6 +75,26 @@ class camionesPDO
             $camion[]=$c;
         }
         return $camion;
+    }
+    private function getidc($c){
+        $patente = $c->getPatente();
+        $insercion = $this->pdo->prepare("SELECT ID_Camion FROM camion where Patente ='$patente'");
+            $insercion->execute();
+            if($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+               return $result->ID_Camion;
+
+            }
+    }
+    public function getById($id){
+        $insercion = $this->pdo->prepare("SELECT ID_Camion ,Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
+        Vencimiento_Senasa, Vencimiento_Bromatologia,Vencimiento_Seguro FROM camion where ID_Camion = $id");
+        $insercion->execute();
+        while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+        {
+            $c= new camion($result->ID_Camion,$result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
+        }
+        return $c;
     }
 
 }

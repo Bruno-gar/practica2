@@ -33,6 +33,8 @@
                         <th>Patente</th>
                         <th>Marca</th>
                         <th>Año</th>
+                        <th>Año</th>
+                        <th>Año</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,9 +42,11 @@
                         foreach($c as $camion){
                     ?>
                     <tr>
+                        <td><?php echo $camion->ID_Camion;?></td>
                         <td><?php echo $camion->Patente;?></td>
                         <td><?php echo $camion->Marca; ?></td>
                         <td><?php echo $camion->Anio;?></td>
+                        <td><a class="btn btn-primary btn-lg active" role="button" href="formulario-modificacion-camion.php?ID_Camion=<?php echo $camion->ID_Camion; ?>">modificar</a></td>
                         <?php } ?>
                     </tr>
                 </tbody>

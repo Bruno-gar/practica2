@@ -33,6 +33,7 @@
                         <th>Patente</th>
                         <th>Marca</th>
                         <th>Año</th>
+                        <th>Año</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,6 +44,7 @@
                         <td><?php echo $semi->Patente;?></td>
                         <td><?php echo $semi->Marca; ?></td>
                         <td><?php echo $semi->Anio;?></td>
+                        <td><a class="btn btn-primary btn-lg active" role="button" href="formulario-modificacion-semi.php?id=<?php echo $semi->ID_Semi; ?>">modificar</a></td>
                         <?php } ?>
                     </tr>
                 </tbody>
