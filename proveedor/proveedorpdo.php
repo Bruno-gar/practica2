@@ -49,7 +49,7 @@
         public function insert($p)
         {
             $c = $p->getCuit();
-            $insercion = $this->pdo->prepare("SELECT Cuit FROM empresa_destino where Cuit = $c");
+            $insercion = $this->pdo->prepare("SELECT Cuit FROM empresa_destino where Cuit = '$c'");
             $insercion->execute();
             if( $insercion->fetch(PDO::FETCH_OBJ))
             {

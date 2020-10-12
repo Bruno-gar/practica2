@@ -27,25 +27,35 @@ class choferPDO
 
     }
     public function insert($c){
-
-        $insercion = $this->pdo->prepare("INSERT INTO chofer (Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
-        Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos) VALUES (?,?,?,?,?,?,?,?)");
-
-        $datos = [
-            $c->getCuil(),
-            $c->getNombre(),
-            $c->getApellido(),
-            $c->getTelefono(),
-            $c->getPsico(),
-            $c->getCargas(),
-            $c->getArt(),
-            $c->getCeda()
-        ];
-
-        if($insercion-> execute($datos))
+        $cuil = $c->getCuil();
+        $insercion = $this->pdo->prepare("SELECT Cuil FROM chofer where Cuil = '$cuil'");
+        $insercion->execute();
+        if( $insercion->fetch(PDO::FETCH_OBJ))
         {
-            header("Location: ../chofer.php?mensaje=1");
-            die();
+            header("Location: ../chofer.php?mensaje=2");
+                die();
+        }
+        else
+        {
+            $insercion = $this->pdo->prepare("INSERT INTO chofer (Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
+            Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos) VALUES (?,?,?,?,?,?,?,?)");
+
+            $datos = [
+                $c->getCuil(),
+                $c->getNombre(),
+                $c->getApellido(),
+                $c->getTelefono(),
+                $c->getPsico(),
+                $c->getCargas(),
+                $c->getArt(),
+                $c->getCeda()
+            ];
+
+            if($insercion-> execute($datos))
+            {
+                header("Location: ../chofer.php?mensaje=1");
+                die();
+            }
         }
     }
     public function update($c){

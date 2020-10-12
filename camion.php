@@ -8,6 +8,11 @@
                 alert("Exito al cargar");
              </script>';
     }
+    elseif($mensaje == 2){
+        echo'<script type="text/javascript">
+                alert("El camion ya existe");
+             </script>';
+    }
 ?>
 <html>
     <head>

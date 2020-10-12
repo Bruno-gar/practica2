@@ -26,26 +26,37 @@ class camionesPDO
 
     }
     public function insert($c){
-
-        $insercion = $this->pdo->prepare("INSERT INTO camion (Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
-        Vencimiento_Senasa, Vencimiento_Bromatologia, Vencimiento_Seguro) VALUES (?,?,?,?,?,?,?,?)");
-
-        $datos = [
-            $c->getPatente(),
-            $c->getKilometros(),
-            $c->getAnio(),
-            $c->getMarca(),
-            $c->getTecnica(),
-            $c->getSenasa(),
-            $c->getBromatologia(),
-            $c->getSeguro()
-        ];
-
-        if($insercion-> execute($datos))
+        $patente = $c->getPatente();
+        $insercion = $this->pdo->prepare("SELECT Patente FROM camion where Patente = '$patente'");
+        $insercion->execute();
+        if( $insercion->fetch(PDO::FETCH_OBJ))
         {
-            header("Location: ../camion.php?mensaje=1");
-            die();
+            header("Location: ../camion.php?mensaje=2");
+                die();
         }
+        else
+        {
+            $insercion = $this->pdo->prepare("INSERT INTO camion (Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
+            Vencimiento_Senasa, Vencimiento_Bromatologia, Vencimiento_Seguro) VALUES (?,?,?,?,?,?,?,?)");
+
+            $datos = [
+                $c->getPatente(),
+                $c->getKilometros(),
+                $c->getAnio(),
+                $c->getMarca(),
+                $c->getTecnica(),
+                $c->getSenasa(),
+                $c->getBromatologia(),
+                $c->getSeguro()
+            ];
+
+            if($insercion-> execute($datos))
+            {
+                header("Location: ../camion.php?mensaje=1");
+                die();
+            }
+        }
+        
     }
     public function update($c){
         

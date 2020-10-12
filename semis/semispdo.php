@@ -27,24 +27,35 @@ class semisPDO
     }
     public function insert($c){
 
-        $insercion = $this->pdo->prepare("INSERT INTO semi (Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
-        Vencimiento_Senasa, Vencimiento_Bromatologia, Vencimiento_Seguro) VALUES (?,?,?,?,?,?,?,?)");
-
-        $datos = [
-            $c->getPatente(),
-            $c->getKilometros(),
-            $c->getAnio(),
-            $c->getMarca(),
-            $c->getTecnica(),
-            $c->getSenasa(),
-            $c->getBromatologia(),
-            $c->getSeguro()
-        ];
-
-        if($insercion-> execute($datos))
+        $patente = $c->getPatente();
+        $insercion = $this->pdo->prepare("SELECT Patente FROM semi where Patente = '$patente'");
+        $insercion->execute();
+        if( $insercion->fetch(PDO::FETCH_OBJ))
         {
-            header("Location: ../semi.php?mensaje=1");
-            die();
+            header("Location: ../semi.php?mensaje=2");
+                die();
+        }
+        else
+        {
+            $insercion = $this->pdo->prepare("INSERT INTO semi (Patente, Kilometros, Anio, Marca, Vencimiento_Tecnica,
+            Vencimiento_Senasa, Vencimiento_Bromatologia, Vencimiento_Seguro) VALUES (?,?,?,?,?,?,?,?)");
+
+            $datos = [
+                $c->getPatente(),
+                $c->getKilometros(),
+                $c->getAnio(),
+                $c->getMarca(),
+                $c->getTecnica(),
+                $c->getSenasa(),
+                $c->getBromatologia(),
+                $c->getSeguro()
+            ];
+
+            if($insercion-> execute($datos))
+            {
+                header("Location: ../semi.php?mensaje=1");
+                die();
+            }
         }
     }
 
