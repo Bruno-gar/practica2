@@ -108,6 +108,26 @@ class semisPDO
         }
         return $c;
     }
+
+    public function getVencimientos(){
+        $semis= $this->getAll();
+        $hoy = date_create(date("l"));
+        foreach($semis as $semi){
+            $tecnica = date_diff(date_create($semi->getTecnica()),$hoy);
+            $senasa=date_diff(date_create($semi->getSenasa()),$hoy);
+            $bromatologia=date_diff(date_create($semi->getBromatologia()),$hoy);
+            $seguro=date_diff(date_create($semi->getSeguro()),$hoy);
+            if($tecnica->format('%a') <30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
+                $semisven[]=$semi;
+            }
+            else{
+                $semisven="null";
+                break;
+            }
+        }
+        return $semisven;
+    }
+
 }
 
 ?>

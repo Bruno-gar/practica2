@@ -108,6 +108,26 @@ class camionesPDO
         return $c;
     }
 
+    public function getVencimientos(){
+        $camiones= $this->getAll();
+        $hoy = date_create(date("l"));
+        foreach($camiones as $camion){
+            $tecnica = date_diff(date_create($camion->getTecnica()),$hoy);
+            $senasa=date_diff(date_create($camion->getSenasa()),$hoy);
+            $bromatologia=date_diff(date_create($camion->getBromatologia()),$hoy);
+            $seguro=date_diff(date_create($camion->getSeguro()),$hoy);
+            if($tecnica->format('%a') <30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
+                $camionesven[]=$camion;
+            }
+            else{
+                $camionesven="null";
+                break;
+            }
+            
+        }
+        return $camionesven;
+    }
+
 }
 
 ?>

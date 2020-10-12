@@ -3,5 +3,27 @@ footer{
     position:fixed;
     bottom:0px;
     width:100%;
-    
+}
+
+p{
+    color:white;
+    padding:0;
+    margin:0;
+    text-decoration:underline;
+}
+
+span{
+    padding:0;
+    color:rgba(190, 190, 190, 0.959);
+}
+
+hr{
+    margin:2 2;
+}
+
+.copyrights{
+    color:white;
+    font-weight: bold;
+    font-size: small;
+    text-align: center;
 }
