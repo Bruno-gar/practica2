@@ -98,6 +98,20 @@
             }
             return $p;
         }
+
+        public function getProvedoresLocalidades($localidad)
+        {
+            
+            $insercion = $this->pdo->prepare("SELECT ed.ID_Empresa_Destino, ed.Cuit, ed.Nombre, ed.Telefono, ed.calle, ed.numero, l.localidad FROM empresa_destino as ed JOIN localidad as l on ed.ID_Localidad = l.ID_Localidad where l.Localidad = '$localidad' ");
+            $insercion->execute();
+            while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+            {
+                $p= new proveedor($result->ID_Empresa_Destino,$result->Cuit,$result->Nombre,$result->Telefono,$result->calle,$result->numero,$result->localidad);
+                $proveedor[]=$p;
+            }
+            return $proveedor;
+
+        }
     }
 
 ?>

@@ -1,16 +1,7 @@
 <?php
     require_once 'proveedor\proveedorpdo.php';
-    require_once 'camion\camionespdo.php';
-    require_once 'chofer\choferespdo.php';
-    require_once 'semis\semispdo.php';
-    $choferpdo = new choferPDO();
-    $c = $choferpdo->getall();
-    $camionpdo = new camionesPDO();
-    $ca = $camionpdo->getall();
-    $semipdo = new semisPDO();
-    $s = $semipdo->getall();
     $proveedorpdo = new proveedorPDO();
-    $p = $proveedorpdo->getall();
+    $localidades = $proveedorpdo->getLocalidades();
 ?>
 <html>
     <head>
@@ -35,87 +26,21 @@
             <div class="table-responsive">
                 <!-- Form -->
                 <table class="table table">
-                <form class="text-center" style="color: #757575;" action="encomiendas\insertarencomienda.php" method="post">
-                    <tr>
-                        <td>
-                             <!-- Fecha -->
-                            <div class="md-form mt-3">
-                                <input type="date" id="fecha-encomienda" name="fecha-encomienda"class="form-control">
-                                <label for="fecha-encomienda">Fecha</label>
-                            </div>
-                        </td>
-                        <td>
-                            <!-- chofer -->
-                            <div class="md-form mt-3">
-                            <select class="custom-select" name="chofer-encomienda">
-                                    <option selected>elija un chofer</option>
+                <form class="text-center" style="color: #757575;" action="posibles-encomiendas.php" method="post">
+                    <tr>        
+                            <select class="custom-select" name="Localidad-Proveedor">
+                                    <option selected>elija la localidad</option>
                                     <?php
-                                        foreach($c as $chofer){
+                                        foreach($localidades as $localidad){
                                     ?>
-                                    <option value="<?php echo $chofer->id_chofer;?>"><?php echo $chofer->nombre;?></option>
+                                    <option value="<?php echo $localidad;?>"><?php echo $localidad;?></option>
                                     <?php } ?>
-                                </select>
-                                <label for="chofer-encomienda">Chofer</label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                             <!-- camion -->
-                            <div class="md-form mt-3">
-                            <select class="custom-select" name="camion-encomienda">
-                                    <option selected>elija un camion</option>
-                                    <?php
-                                        foreach($ca as $camion){
-                                    ?>
-                                    <option value="<?php echo $camion->ID_Camion;?>"><?php echo $camion->Patente;?></option>
-                                    <?php } ?>
-                                </select>
-                                <label for="camion-encomienda">camion</label>
-                            </div>
-                        </td>
-                        <td>
-                            <!-- semi -->
-                            <div class="md-form mt-3">
-                                <select class="custom-select" name="semi-encomienda">
-                                    <option selected>elija un semi</option>
-                                    <?php
-                                        foreach($s as $semi){
-                                    ?>
-                                    <option value="<?php echo $semi->ID_Semi;?>"><?php echo $semi->Patente;?></option>
-                                    <?php } ?>
-                                </select>
-                                <label for="semi-encomienda">Semi</label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <!-- empresa -->
-                            <div class="md-form mt-3">
-                            <select class="custom-select" name="proveedor-encomienda">
-                                    <option selected>elija una proveedor</option>
-                                    <?php
-                                        foreach($p as $proveedor){
-                                    ?>
-                                    <option value="<?php echo $proveedor->id_proveedor;?>"><?php echo $proveedor->Nombre;?></option>
-                                    <?php } ?>
-                                </select>
-                                <label for="proveedor-encomienda">proveedor</label>
-                            </div>
-                        </td>
-                        <td>
-                            <!-- importe -->
-                            <div class="md-form mt-3">
-                                <input type="number" id="inporte-encomienda" name="inporte-encomienda" class="form-control">
-                                <label for="inporte-encomienda">importe</label>
-                            </div>
-                        </td>
+                            </select>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <!-- Boton para crear -->
-                            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">CREAR</button>
+                            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">buscar</button>
                         </td>
                     </tr>
                 </form>
