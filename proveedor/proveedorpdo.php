@@ -35,15 +35,7 @@
             {
                return $result->ID_Localidad;
 
-            }
-            else{
-                $s = $this->pdo->prepare("INSERT INTO localidad (Localidad) VALUES (?)");
-                $datos=[$localidad];
-                if($s ->execute($datos)){
-                    $this->getLocalidadId($localidad);
-                }
-                
-            }
+            } 
         }
 
         public function insert($p)
