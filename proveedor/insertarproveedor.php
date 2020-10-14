@@ -7,8 +7,6 @@
     $d = $_POST['Localidad-Proveedor'];
     $e = $_POST['Calle-Proveedor'];
     $f = $_POST['Numero-Proveedor'];
-
-    echo $d;
     $p = new proveedor ("null",$a,$b,$c,$e,$f,$d);
     $pdo = new proveedorpdo();
 

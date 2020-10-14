@@ -6,8 +6,8 @@
     $c = $pdochofer->getVencimientos();
     $pdocamion = new camionesPDO();
     $ca = $pdocamion->getVencimientos();
-    $pdochofer = new semisPDO();
-    $s = $pdochofer->getVencimientos();
+    $pdosemi = new semisPDO();
+    $s = $pdosemi->getVencimientos();
 ?>
 <html>
     <head>
@@ -61,8 +61,30 @@
                         <div class="card-header">
                             vencimientos camiones
                         </div>
-                        <ul class="list-group list-group-flush">
-                        </ul>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Patente</th>
+                                        <th>tecnica</th>
+                                        <th>senasa</th>
+                                        <th>bromatologia</th>
+                                        <th>seguro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        foreach($ca as $camion){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $camion->Patente; ?></td>
+                                        <td><?php echo $camion->Vencimiento_Tecnica;?></td>
+                                        <td><?php echo $camion->Vencimiento_Senasa;?></td>
+                                        <td><?php echo $camion->Vencimiento_Bromatologia;?></td>
+                                        <td><?php echo $camion->Vencimiento_Seguro;?></td>
+                                        <?php } ?>
+                                    </tr>
+                                </tbody>
+                            </table>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -70,11 +92,30 @@
                         <div class="card-header">
                             vencimientos semis
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
+                        <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Patente</th>
+                                <th>tecnica</th>
+                                <th>senasa</th>
+                                <th>bromatologia</th>
+                                <th>seguro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach($s as $semi){
+                            ?>
+                            <tr>
+                                <td><?php echo $semi->Patente;?></td>
+                                <td><?php echo $semi->Vencimiento_Tecnica; ?></td>
+                                <td><?php echo $semi->Vencimiento_Senasa;?></td>
+                                <td><?php echo $semi->Vencimiento_Bromatologia;?></td>
+                                <td><?php echo $semi->Vencimiento_Seguro;?></td>
+                                <?php } ?>
+                            </tr>
+                        </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

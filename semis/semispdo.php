@@ -120,10 +120,6 @@ class semisPDO
             if($tecnica->format('%a') <30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
                 $semisven[]=$semi;
             }
-            else{
-                $semisven="null";
-                break;
-            }
         }
         return $semisven;
     }
