@@ -29,6 +29,7 @@
         <div class="container">
         <!-- botones de funcines -->
         <a class="btn btn-primary btn-lg active" role="button" href="formulario-carga-encomienda.php">Cargar encomienda</a>
+        <a class="btn btn-primary btn-lg active" role="button" href="formulario-posible-encomienda.php">posibles encomiendas</a>
         
         </div>
         <div class="container">
