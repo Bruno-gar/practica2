@@ -28,9 +28,8 @@
             <?php include 'includes\navbar.php'?>
         </div>
         <div class="container">
-        <!-- tabla de los semis -->
-            <table class="table">
-                <thead>
+            <table class="table table-striped">
+                <thead class="thead-dark bg-dark">
                     <tr>
                         <th>Cuit</th>
                         <th>Nombre</th>

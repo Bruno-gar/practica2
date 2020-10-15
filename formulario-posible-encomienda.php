@@ -29,7 +29,7 @@
                 <form class="text-center" style="color: #757575;" action="posibles-encomiendas.php" method="post">
                     <tr>        
                             <select class="custom-select" name="Localidad-Proveedor">
-                                    <option selected>elija la localidad</option>
+                                    <option selected>Elija Localidad</option>
                                     <?php
                                         foreach($localidades as $localidad){
                                     ?>

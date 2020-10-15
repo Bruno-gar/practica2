@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/validaciones.js"></script>
     </head> 
 
     <body>
@@ -26,14 +27,14 @@
                         <td>
                              <!-- Patente -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Patente-Camion" name="Patente-Camion" class="form-control">
+                                <input type="text" id="Patente" name="Patente-Camion" class="form-control" onblur="validarTexto(this)">
                                 <label for="Patente-Camion">Patente</label>
                             </div>
                         </td>
                         <td>
                             <!-- Kilometraje -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Kilometros-Camion" name="Kilometros-Camion" class="form-control">
+                                <input type="number" id="Kilometros" name="Kilometros-Camion" class="form-control" onblur="validarNumeros(this)">
                                 <label for="Kilometros-Camion">Kilometraje</label>
                             </div>
                         </td>
@@ -42,14 +43,14 @@
                         <td>
                             <!-- Año -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Año-Camion" name="Año-Camion" class="form-control">
+                                <input type="number" id="Año-Modelo" name="Año-Camion" class="form-control" onblur="validarNumeros(this)">
                                 <label for="Año-Camion">Año/Modelo</label>
                             </div>
                         </td>
                         <td>
                             <!-- Marca -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Marca-Camion" name="Marca-Camion" class="form-control">
+                                <input type="text" id="Marca" name="Marca-Camion" class="form-control" onblur="validarTexto(this)">
                                 <label for="Marca-Camion">Marca</label>
                             </div>
                         </td>
@@ -58,14 +59,14 @@
                         <td>
                             <!-- Vto Tecnica -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Tecnica-Camion" name="Vto-Tecnica-Camion" class="form-control">
+                                <input type="date" id="Tecnica" name="Vto-Tecnica-Camion" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Tecnica-Camion">Vencimiento Tecnica</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto SENASA -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Senasa-Camion" name="Vto-Senasa-Camion" class="form-control">
+                                <input type="date" id="SENASA" name="Vto-Senasa-Camion" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Senasa-Camion">Vencimiento SENASA</label>
                             </div>
                         </td>
@@ -74,14 +75,14 @@
                         <td>
                             <!-- Vto Bromatologia -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Bromatologia-Camion"  name="Vto-Bromatologia-Camion" class="form-control">
+                                <input type="date" id="Bromatologia"  name="Vto-Bromatologia-Camion" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Bromatologia-Camion">Vencimiento Bromatologia</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto Seguro -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Seguro-Camion" name="Vto-Seguro-Camion" class="form-control">
+                                <input type="date" id="Seguro" name="Vto-Seguro-Camion" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Seguro-Camion">Vencimiento Seguro</label>
                             </div>
                         </td>

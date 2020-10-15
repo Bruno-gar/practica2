@@ -17,6 +17,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/validaciones.js"></script>
     </head> 
 
     <body>
@@ -40,7 +41,7 @@
                         <td>
                              <!-- Fecha -->
                             <div class="md-form mt-3">
-                                <input type="date" id="fecha-encomienda" name="fecha-encomienda"class="form-control">
+                                <input type="date" id="Fecha" name="fecha-encomienda"class="form-control" onblur="validarFechas(this)">
                                 <label for="fecha-encomienda">Fecha</label>
                             </div>
                         </td>
@@ -107,7 +108,7 @@
                         <td>
                             <!-- importe -->
                             <div class="md-form mt-3">
-                                <input type="number" id="inporte-encomienda" name="inporte-encomienda" class="form-control">
+                                <input type="number" id="Importe" name="inporte-encomienda" class="form-control" onblur="validarNumeros(this)">
                                 <label for="inporte-encomienda">importe</label>
                             </div>
                         </td>

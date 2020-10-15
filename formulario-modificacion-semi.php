@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/validaciones.js"></script>
     </head> 
 
     <body>
@@ -31,14 +32,14 @@
                         <td>
                              <!-- Patente -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Patente-Semi" name="Patente-Semi" value="<?php echo $c->Patente;?>" class="form-control">
+                                <input type="text" id="Patente-Semi" name="Patente-Semi" readonly value="<?php echo $c->Patente;?>" class="form-control">
                                 <label for="Patente-Semi">Patente</label>
                             </div>
                         </td>
                         <td>
                             <!-- Kilometraje -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Kilometros-Semi" name="Kilometros-Semi"  value="<?php echo $c->Kilometros;?>" class="form-control">
+                                <input type="number" id="Kilometros-Semi" name="Kilometros-Semi" readonly value="<?php echo $c->Kilometros;?>" class="form-control">
                                 <label for="Kilometros-Semi">Kilometraje</label>
                             </div>
                         </td>
@@ -47,14 +48,14 @@
                         <td>
                             <!-- Año -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Año-Semi" name="Año-Semi"  value="<?php echo $c->Anio;?>" class="form-control">
+                                <input type="number" id="Año-Semi" name="Año-Semi" readonly value="<?php echo $c->Anio;?>" class="form-control">
                                 <label for="Año-Semi">Año/Modelo</label>
                             </div>
                         </td>
                         <td>
                             <!-- Marca -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Marca-Semi" name="Marca-Semi" value="<?php echo $c->Marca;?>"  class="form-control">
+                                <input type="text" id="Marca-Semi" name="Marca-Semi" readonly value="<?php echo $c->Marca;?>"  class="form-control">
                                 <label for="Marca-Semi">Marca</label>
                             </div>
                         </td>
@@ -63,14 +64,14 @@
                         <td>
                             <!-- Vto Tecnica -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Tecnica-Semi" name="Vto-Tecnica-Semi" class="form-control">
+                                <input type="date" id="Tecnica" name="Vto-Tecnica-Semi" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Tecnica-Semi">Vencimiento Tecnica</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto SENASA -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Senasa-Semi" name="Vto-Senasa-Semi" class="form-control">
+                                <input type="date" id="SENASA" name="Vto-Senasa-Semi" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Senasa-Semi">Vencimiento SENASA</label>
                             </div>
                         </td>
@@ -79,14 +80,14 @@
                         <td>
                             <!-- Vto Bromatologia -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Bromatologia-Semi" name="Vto-Bromatologia-Semi" class="form-control">
+                                <input type="date" id="Bromatologia" name="Vto-Bromatologia-Semi" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Bromatologia-Semi">Vencimiento Bromatologia</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto Seguro -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Seguro-Semi" name="Vto-Seguro-Semi" class="form-control">
+                                <input type="date" id="Seguro" name="Vto-Seguro-Semi" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Seguro-Semi">Vencimiento Seguro</label>
                             </div>
                         </td>

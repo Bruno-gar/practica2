@@ -19,6 +19,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/validaciones.js"></script>
     </head> 
 
     <body>
@@ -42,14 +43,14 @@
                         <td>
                              <!-- CUIT -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Cuit-Proveedor" name="Cuit-Proveedor"class="form-control">
+                                <input type="number" id="Cuit" name="Cuit-Proveedor"class="form-control" onblur="validarNumeros(this)">
                                 <label for="Cuit-Proveedor">CUIT</label>
                             </div>
                         </td>
                         <td>
                             <!-- Nombre -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Nombre-Proveedor" name="Nombre-Proveedor" class="form-control">
+                                <input type="text" id="Nombre" name="Nombre-Proveedor" class="form-control" onblur="validarTexto(this)">
                                 <label for="Nombre-Proveedor">Nombre</label>
                             </div>
                         </td>
@@ -58,7 +59,7 @@
                         <td>
                              <!-- Telefono -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Telefono-Proveedor" name="Telefono-Proveedor" class="form-control">
+                                <input type="number" id="Telefono" name="Telefono-Proveedor" class="form-control" onblur="validarNumeros(this)">
                                 <label for="Telefono-Proveedor">Telefono</label>
                             </div>
                         </td>
@@ -66,7 +67,7 @@
                             <!-- Localidad -->
                             <div class="md-form mt-3">
                                 <select class="custom-select" name="Localidad-Proveedor">
-                                    <option selected>elija la localidad</option>
+                                    <option selected>Elija la localidad</option>
                                     <?php
                                         foreach($p as $proveedor){
                                     ?>
@@ -74,7 +75,9 @@
                                     <?php } ?>
                                 </select>
                                 <label for="Localidad-Proveedor">Localidad</label>
-                                <a class="btn btn-secondary active" role="button" href="proveedor/insertarlocalidad.php">nueva localidad</a>
+                    
+                    <!-- INPUT INVISIBLE NUEVA LOCALIDAD -->
+                                <input type="checkbox" name="check" id="check" value="1" OnChange="">
                             </div>
                         </td>
                     </tr>
@@ -82,14 +85,14 @@
                         <td>
                             <!-- Direccion -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Calle-Proveedor" name="Calle-Proveedor" class="form-control">
+                                <input type="text" id="Calle" name="Calle-Proveedor" class="form-control" onblur="validarTexto(this)">
                                 <label for="Calle-Proveedor">Calle</label>
                             </div>
                         </td>
                         <td>
                             <!-- Direccion -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Numero-Proveedor" name="Numero-Proveedor" class="form-control">
+                                <input type="text" id="Numero" name="Numero-Proveedor" class="form-control" onblur="validarNumeros(this)">
                                 <label for="Numero-Proveedor">Numero</label>
                             </div>
                         </td>

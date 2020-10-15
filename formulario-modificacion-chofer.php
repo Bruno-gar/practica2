@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css\bootstrap.css">
         <link rel="stylesheet" href="css\estilos.css">
+        <script src="js/validaciones.js"></script>
     </head> 
 
     <body>
@@ -48,7 +49,7 @@
                         <td>
                             <!-- cuil -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Cuil-Chofer" name="Cuil-Chofer" value="<?php echo $_GET['cuil'];?>"  class="form-control">
+                                <input type="number" id="Cuil-Chofer" name="Cuil-Chofer" readonly value="<?php echo $_GET['cuil'];?>"  class="form-control">
                                 <label for="Cuil-Chofer">Cuil</label>
                             </div>
                         </td>
@@ -57,14 +58,14 @@
                         <td>
                             <!-- Vto Psicofisico -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Psico-Chofer" name="Vto-Psico-Chofer" class="form-control">
+                                <input type="date" id="Psicofisico" name="Vto-Psico-Chofer" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Psico-Chofer">Vencimiento Psicofisico</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto Cargas Peligrosas -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Cargas-Peligrosas-Chofer" name="Vto-Cargas-Peligrosas-Chofer"  class="form-control">
+                                <input type="date" id="Cargas-Peligrosas" name="Vto-Cargas-Peligrosas-Chofer"  class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Cargas-Peligrosas-Chofer">Vencimiento Cargas Peligrosas</label>
                             </div>
                         </td>
@@ -73,14 +74,14 @@
                         <td>
                             <!-- Vto CEDA -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Ceda-Chofer" name="Vto-Ceda-Chofer" class="form-control">
+                                <input type="date" id="CEDA" name="Vto-Ceda-Chofer" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Ceda-Chofer">Vencimiento CEDA</label>
                             </div>
                         </td>
                         <td>
                             <!-- Vto ART -->
                             <div class="md-form mt-3">
-                                <input type="date" id="Vto-Art-Chofer" name="Vto-Art-Chofer" class="form-control">
+                                <input type="date" id="ART" name="Vto-Art-Chofer" class="form-control" onblur="validarFechas(this)">
                                 <label for="Vto-Art-Chofer">Vencimiento ART</label>
                             </div>
                         </td>

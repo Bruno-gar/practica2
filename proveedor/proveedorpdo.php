@@ -35,7 +35,7 @@
             {
                return $result->ID_Localidad;
 
-            } 
+            }
         }
 
         public function insert($p)
