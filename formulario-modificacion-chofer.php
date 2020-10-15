@@ -1,3 +1,8 @@
+<?php 
+    require_once 'chofer\choferespdo.php';
+    $pdo = new choferPDO();
+    $c = $pdo->getById($_GET['id_chofer']);
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -26,14 +31,14 @@
                         <td>
                              <!-- nombre -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Nombre-Chofer" name="Nombre-Chofer"  class="form-control">
+                                <input type="text" id="Nombre-Chofer" name="Nombre-Chofer" readonly value="<?php echo $c->nombre;?>" class="form-control">
                                 <label for="Nombre-Chofer">Nombre</label>
                             </div>
                         </td>
                         <td>
                             <!-- apellido -->
                             <div class="md-form mt-3">
-                                <input type="text" id="Apellido-Chofer" name="Apellido-Chofer"  class="form-control">
+                                <input type="text" id="Apellido-Chofer" name="Apellido-Chofer" readonly value="<?php echo $c->apellido;?>" class="form-control">
                                 <label for="Apellido-Chofer">Apellido</label>
                             </div>
                         </td>
@@ -42,14 +47,14 @@
                         <td>
                             <!-- telefono -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Telefono-Chofer" name="Telefono-Chofer" class="form-control">
+                                <input type="number" id="Telefono-Chofer" name="Telefono-Chofer" value="<?php echo $c->telefono;?>" class="form-control">
                                 <label for="Telefono-Chofer">Telefono</label>
                             </div>
                         </td>
                         <td>
                             <!-- cuil -->
                             <div class="md-form mt-3">
-                                <input type="number" id="Cuil-Chofer" name="Cuil-Chofer" readonly value="<?php echo $_GET['cuil'];?>"  class="form-control">
+                                <input type="number" id="Cuil-Chofer" name="Cuil-Chofer" readonly value="<?php echo $c->cuil;?>"  class="form-control">
                                 <label for="Cuil-Chofer">Cuil</label>
                             </div>
                         </td>

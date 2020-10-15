@@ -120,6 +120,17 @@ class choferPDO
             }
     }
 
+    public function getById($id){
+        $insercion = $this->pdo->prepare("SELECT ID_Chofer ,Cuil, Nombre, Apellido, Telefono, Vencimiento_Psicofisico, 
+        Vencimiento_Cargas_Peligrosas, Vencimiento_Art, Vencimiento_Manip_Alimentos FROM chofer where ID_Chofer=$id");
+        $insercion->execute();
+        while ($result = $insercion->fetch(PDO::FETCH_OBJ))
+        {
+            $c= new chofer($result->ID_Chofer,$result->Cuil,$result->Nombre,$result->Apellido,$result->Telefono,$result->Vencimiento_Psicofisico,$result->Vencimiento_Cargas_Peligrosas,$result->Vencimiento_Art,$result->Vencimiento_Manip_Alimentos);
+        }
+        return $c;
+    }
+
 }
 
 ?>

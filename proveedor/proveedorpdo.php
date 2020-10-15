@@ -38,6 +38,15 @@
             }
         }
 
+        public function insertarlocalidad($localidad){
+            $s = $this->pdo->prepare("INSERT INTO localidad (Localidad) VALUES (?)");
+                $datos=[$localidad];
+                if($s ->execute($datos)){
+                    header("Location: ../formulario-carga-proveedor.php?mensaje=1");
+                    die();
+                }
+        }
+
         public function insert($p)
         {
             $c = $p->getCuit();

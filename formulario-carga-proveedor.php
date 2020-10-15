@@ -8,11 +8,6 @@
                 alert("Exito al cargar");
              </script>';
     }
-    elseif($mensaje == 2){
-        echo'<script type="text/javascript">
-                alert("La empresa ya exite");
-             </script>';
-    }
 ?>
 <html>
     <head>
@@ -75,9 +70,7 @@
                                     <?php } ?>
                                 </select>
                                 <label for="Localidad-Proveedor">Localidad</label>
-                    
-                    <!-- INPUT INVISIBLE NUEVA LOCALIDAD -->
-                                <input type="checkbox" name="check" id="check" value="1" OnChange="">
+                                <a class="btn btn-primary btn-sm active" role="button" href="formulario-nueva-localidad.php">Nueva localidad</a>
                             </div>
                         </td>
                     </tr>
