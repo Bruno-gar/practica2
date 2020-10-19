@@ -68,7 +68,13 @@ class semisPDO
             $c= new semi($result->ID_Semi,$result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
             $semi[]=$c;
         }
+        if(empty($semi)){
+            $semi = 1;
+            return $semi;
+        }
+        else{
         return $semi;
+        }
     }
     public function update($semi){
         $id= $this->getids($semi);
@@ -112,16 +118,21 @@ class semisPDO
     public function getVencimientos(){
         $semis= $this->getAll();
         $hoy = date_create(date("l"));
-        foreach($semis as $semi){
-            $tecnica = date_diff(date_create($semi->getTecnica()),$hoy);
-            $senasa=date_diff(date_create($semi->getSenasa()),$hoy);
-            $bromatologia=date_diff(date_create($semi->getBromatologia()),$hoy);
-            $seguro=date_diff(date_create($semi->getSeguro()),$hoy);
-            if($tecnica->format('%a') <30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
-                $semisven[]=$semi;
-            }
+        if($semis == 1){
+            return $semis;
         }
-        return $semisven;
+        else{
+            foreach($semis as $semi){
+                $tecnica = date_diff(date_create($semi->getTecnica()),$hoy);
+                $senasa=date_diff(date_create($semi->getSenasa()),$hoy);
+                $bromatologia=date_diff(date_create($semi->getBromatologia()),$hoy);
+                $seguro=date_diff(date_create($semi->getSeguro()),$hoy);
+                if($tecnica->format('%a') <30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
+                    $semisven[]=$semi;
+                }
+            }
+            return $semisven;
+        }
     }
 
 }

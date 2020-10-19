@@ -90,23 +90,34 @@ class choferPDO
             $c= new chofer($result->ID_Chofer,$result->Cuil,$result->Nombre,$result->Apellido,$result->Telefono,$result->Vencimiento_Psicofisico,$result->Vencimiento_Cargas_Peligrosas,$result->Vencimiento_Art,$result->Vencimiento_Manip_Alimentos);
             $chofer[]=$c;
         }
+        if(empty($chofer)){
+            $chofer = 1;
+            return $chofer;
+        }
+        else{
         return $chofer;
+        }
     }
 
     public function getVencimientos(){
         $choferes= $this->getAll();
         $hoy = date_create(date("l"));
-        foreach($choferes as $chofer){
-            $psico = date_diff(date_create($chofer->getPsico()),$hoy);
-            $cargas=date_diff(date_create($chofer->getCargas()),$hoy);
-            $art=date_diff(date_create($chofer->getArt()),$hoy);
-            $ceda=date_diff(date_create($chofer->getCeda()),$hoy);
-            if($psico->format('%a') <30 or $cargas->format('%a') < 30 or $art->format('%a')< 30 or $ceda->format('%a')< 30 ){
-                $choferesven[]=$chofer;
-            }
-            
+        if($choferes == 1){
+            return $choferes;
         }
-        return $choferesven;
+        else{
+            foreach($choferes as $chofer){
+                $psico = date_diff(date_create($chofer->getPsico()),$hoy);
+                $cargas=date_diff(date_create($chofer->getCargas()),$hoy);
+                $art=date_diff(date_create($chofer->getArt()),$hoy);
+                $ceda=date_diff(date_create($chofer->getCeda()),$hoy);
+                if($psico->format('%a') <30 or $cargas->format('%a') < 30 or $art->format('%a')< 30 or $ceda->format('%a')< 30 ){
+                    $choferesven[]=$chofer;
+                }
+                
+            }
+            return $choferesven;
+        }
     }
 
     private function getidc($c){

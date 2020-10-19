@@ -59,6 +59,10 @@
                 </thead>
                 <tbody>
                 <?php
+                    if($e == 1){
+                        echo "<td>No hay encomiendas registradas en la base de datos</td>";
+                    }
+                    else{
                         foreach($e as $encomienda){
                     ?>
                     <tr>
@@ -68,7 +72,7 @@
                         <td><?php echo $encomienda->id_semi;?></td>
                         <td><?php echo $encomienda->id_empresa;?></td>
                         <td>$<?php echo $encomienda->importe;?></td>
-                        <?php } ?>
+                        <?php }} ?>
                     </tr>
                 </tbody>
             </table>

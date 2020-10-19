@@ -39,16 +39,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                        foreach($c as $chofer){
-                                    ?>
+                                        <?php
+                                            if($c == 1){
+                                                echo "<td> No hay choferes en la base de datos</td>";
+                                            }
+                                            else{
+                                                foreach($c as $chofer){
+                                        ?>
                                     <tr>
                                         <td style="font-weight:550;color:black;"><?php echo $chofer->cuil; ?></td>
                                         <td><?php echo $chofer->vencimiento_psicofisico;?></td>
                                         <td><?php echo $chofer->vencimiento_cargas_peligrosas;?></td>
                                         <td><?php echo $chofer->vencimiento_art;?></td>
                                         <td><?php echo $chofer->vencimiento_manip_alimentos;?></td>
-                                        <?php } ?>
+                                        <?php }} ?>
                                     </tr>
                                 </tbody>
                             </table>
@@ -71,6 +75,10 @@
                                 </thead>
                                 <tbody>
                                     <?php
+                                    if($ca == 1){
+                                        echo "<td> No hay camiones en la base de datos</td>";
+                                    }
+                                    else{
                                         foreach($ca as $camion){
                                     ?>
                                     <tr>
@@ -79,7 +87,7 @@
                                         <td><?php echo $camion->Vencimiento_Senasa;?></td>
                                         <td><?php echo $camion->Vencimiento_Bromatologia;?></td>
                                         <td><?php echo $camion->Vencimiento_Seguro;?></td>
-                                        <?php } ?>
+                                        <?php }} ?>
                                     </tr>
                                 </tbody>
                             </table>
@@ -102,6 +110,10 @@
                             </thead>
                             <tbody>
                                 <?php
+                                if($s == 1){
+                                    echo "<td>No hay semis en la base de datos</td>";
+                                }
+                                else{
                                     foreach($s as $semi){
                                 ?>
                                 <tr>
@@ -110,7 +122,7 @@
                                     <td><?php echo $semi->Vencimiento_Senasa;?></td>
                                     <td><?php echo $semi->Vencimiento_Bromatologia;?></td>
                                     <td><?php echo $semi->Vencimiento_Seguro;?></td>
-                                    <?php } ?>
+                                    <?php }} ?>
                                 </tr>
                             </tbody>
                         </table>

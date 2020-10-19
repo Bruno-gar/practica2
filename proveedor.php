@@ -49,6 +49,10 @@
                 </thead>
                 <tbody>
                     <?php
+                    if($p == 1){
+                        echo "<td>No hay proveedores registrados en la base de datos</td>";
+                    }
+                    else{
                         foreach($p as $proveedor){
                     ?>
                     <tr>
@@ -58,7 +62,7 @@
                         <td><?php echo $proveedor->Calle;?></td>
                         <td><?php echo $proveedor->Numero;?></td>
                         <td><?php echo $proveedor->Localidad;?></td>
-                        <?php } ?>
+                        <?php }} ?>
                     </tr>
                 </tbody>
             </table>

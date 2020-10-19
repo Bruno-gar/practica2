@@ -87,7 +87,13 @@
                 $p= new proveedor($result->ID_Empresa_Destino,$result->Cuit,$result->Nombre,$result->Telefono,$result->calle,$result->numero,$result->localidad);
                 $proveedor[]=$p;
             }
+            if(empty($proveedor)){
+                $proveedor = 1;
+                return $proveedor;
+            }
+            else{
             return $proveedor;
+            }
         }
         public function getLocalidades(){
             $insercion = $this->pdo->prepare("SELECT localidad FROM localidad ");

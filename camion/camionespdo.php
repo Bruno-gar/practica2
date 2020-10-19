@@ -85,7 +85,13 @@ class camionesPDO
             $c= new camion($result->ID_Camion,$result->Patente,$result->Kilometros,$result->Anio,$result->Marca,$result->Vencimiento_Tecnica,$result->Vencimiento_Senasa,$result->Vencimiento_Bromatologia,$result->Vencimiento_Seguro);
             $camion[]=$c;
         }
+        if(empty($camion)){
+            $camion = 1;
+            return $camion;
+        }
+        else{
         return $camion;
+        }
     }
     private function getidc($c){
         $patente = $c->getPatente();
@@ -111,17 +117,22 @@ class camionesPDO
     public function getVencimientos(){
         $camiones= $this->getAll();
         $hoy = date_create(date("l"));
-        foreach($camiones as $camion){
-            $tecnica = date_diff(date_create($camion->getTecnica()),$hoy);
-            $senasa=date_diff(date_create($camion->getSenasa()),$hoy);
-            $bromatologia=date_diff(date_create($camion->getBromatologia()),$hoy);
-            $seguro=date_diff(date_create($camion->getSeguro()),$hoy);
-            if($tecnica->format('%a') < 30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
-                $camionesven[]=$camion;
-            }
-            
+        if($camiones == 1){
+            return $camiones;
         }
-        return $camionesven;
+        else{
+            foreach($camiones as $camion){
+                $tecnica = date_diff(date_create($camion->getTecnica()),$hoy);
+                $senasa=date_diff(date_create($camion->getSenasa()),$hoy);
+                $bromatologia=date_diff(date_create($camion->getBromatologia()),$hoy);
+                $seguro=date_diff(date_create($camion->getSeguro()),$hoy);
+                if($tecnica->format('%a') < 30 or $senasa->format('%a') < 30 or $bromatologia->format('%a')< 30 or $seguro->format('%a')< 30 ){
+                    $camionesven[]=$camion;
+                }
+                
+            }
+            return $camionesven;
+        }
     }
 
 }

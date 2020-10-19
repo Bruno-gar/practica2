@@ -49,6 +49,10 @@
                 </thead>
                 <tbody>
                     <?php
+                    if($c == 1){
+                        echo "<td>No hay semis en la base de datos</td>";
+                    }
+                    else{
                         foreach($c as $semi){
                     ?>
                     <tr>
@@ -62,7 +66,7 @@
                                 </svg>
                             </a>
                         </td>
-                        <?php } ?>
+                        <?php }} ?>
                     </tr>
                 </tbody>
             </table>

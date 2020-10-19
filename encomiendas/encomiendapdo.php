@@ -55,7 +55,13 @@
                 $e= new encomienda("null",$result->Fecha,$result->Nombre,$result->Patente,$result->Patente,$result->Nombre,$result->Importe);
                 $encomienda[]=$e;
             }
+            if(empty($encomienda)){
+                $encomienda = 1;
+                return $encomienda;
+            }
+            else{
             return $encomienda;
+            }
         }
         
     }

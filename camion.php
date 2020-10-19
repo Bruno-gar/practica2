@@ -50,6 +50,10 @@
                 </thead>
                 <tbody>
                     <?php
+                        if($c == 1){
+                            echo "<td> No hay camiones en la base de datos</td>";
+                        }
+                        else{
                         foreach($c as $camion){
                     ?>
                     <tr>
@@ -64,7 +68,7 @@
                                 </svg>
                             </a>
                         </td>
-                        <?php } ?>
+                        <?php }} ?>
                     </tr>
                 </tbody>
             </table>
