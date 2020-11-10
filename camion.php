@@ -44,7 +44,7 @@
                         <th>Patente</th>
                         <th>Marca</th>
                         <th>Año</th>
-                        <th>Año</th>
+                        <th>Kilometros</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -57,10 +57,10 @@
                         foreach($c as $camion){
                     ?>
                     <tr>
-                        <td><?php echo $camion->ID_Camion;?></td>
                         <td><?php echo $camion->Patente;?></td>
-                        <td><?php echo $camion->Marca; ?></td>
-                        <td><?php echo $camion->Anio;?></td>
+                        <td><?php echo $camion->Marca;?></td>
+                        <td><?php echo $camion->Anio; ?></td>
+                        <td><?php echo $camion->Kilometros;?></td>
                         <td><!--boton de modificar-->
                             <a role="button" href="formulario-modificacion-camion.php?ID_Camion=<?php echo $camion->ID_Camion; ?>">
                                 <svg width="30px" height="22px" viewBox="0 0 16 16" class="bi bi-pen-fill icono" xmlns="http://www.w3.org/2000/svg">
